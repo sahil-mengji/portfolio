@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:700");
 
+:root {
+	--t: 20s;
+}
 .social-links {
 	display: flex;
 	align-items: center;
@@ -27,16 +30,15 @@
 .bento-grid {
 	display: grid;
 	grid-template-columns: repeat(4, 280px);
-	grid-template-rows: repeat(6, 280px);
+	grid-template-rows: repeat(3, 280px);
 	gap: 15px;
 	max-width: 1165px;
-	width: 100%;
+	padding-bottom: 50px;
 
 	grid-template-areas:
-		"hero hero map social"
-		"hero hero . skills"
-		"spotify quote quote skills"
-		"warning warning work work";
+		"hero hero quote quote"
+		"hero hero social work"
+		"map skills skills work ";
 }
 
 .bento-grid > div {
@@ -53,6 +55,8 @@
 	grid-area: map;
 	padding: 0 !important;
 	overflow: hidden;
+
+	filter: grayscale(1) opacity(0.6) invert(1);
 }
 .quote {
 	grid-area: quote;
@@ -81,28 +85,28 @@
 	color: white;
 }
 
-.social > svg {
+.social > a > svg {
 	fill: rgb(158, 166, 185);
 	height: 40px;
 	width: 40px;
 	transition: 200ms;
 }
 
-.social > svg:hover {
+.social > a > svg:hover {
 	transform: scale(1.4);
 	cursor: pointer;
 }
 
-.social > .div1:hover {
+.social > a > .div1:hover {
 	fill: rgb(114, 220, 255);
 }
-.social > .div2:hover {
+.social > a > .div2:hover {
 	fill: rgb(159, 87, 254);
 }
-.social > .div3:hover {
+.social > a > .div3:hover {
 	fill: rgb(87, 137, 254);
 }
-.social > .div4:hover {
+.social > a > .div4:hover {
 	fill: rgb(254, 87, 115);
 }
 .container > p {
@@ -186,16 +190,23 @@
 	font-size: 2rem;
 }
 .iam > p {
-	font-family: "Droid Serif", serif;
+	font-family: "Roboto";
 	font-weight: bold;
 }
 
 .pimage {
-	background: url("https://miro.medium.com/v2/resize:fit:785/0*Ggt-XwliwAO6QURi.jpg");
+	background: url("./pf.png");
 	object-fit: cover;
 	background-size: cover;
+	transform: rotate(-3deg);
+	transition: 200ms;
+	filter: grayscale(0.3);
 }
 
+.pimage:hover {
+	transform: rotate(0);
+	transform: scale(1.2);
+}
 .nlogo {
 	background: url("../../../public/logoa.png");
 	object-fit: contain;
@@ -229,7 +240,7 @@ blockquote > div > p {
 	font-style: italic;
 }
 
-.scroll {
+.scrollskills {
 	overflow: hidden;
 	position: relative;
 	display: flex;
@@ -244,19 +255,18 @@ blockquote > div > p {
 	);
 }
 
-.scroll div {
+.scrollskills div {
 	white-space: nowrap;
-	animation: animate var(--t) linear infinite;
-	animation-delay: calc(var(--t) * -1);
+	animation: animate 20s linear -10s infinite;
 }
 
-.something {
-	animation: animate2 var(--t) linear infinite;
-	animation-delay: calc(var(--t) / -2);
+.scroll2div {
+	animation: animate2 20s linear -20s infinite;
+
 	background-color: blue;
 }
 
-@keyframes animate {
+@keyframes animate2 {
 	0% {
 		transform: translateX(100%);
 	}
@@ -264,7 +274,7 @@ blockquote > div > p {
 		transform: translateX(-100%);
 	}
 }
-.scroll div span {
+.scrollskills div span {
 	display: inline-flex;
 	margin: 10px;
 	background-color: #21262d;
@@ -274,16 +284,45 @@ blockquote > div > p {
 	transition: 500ms;
 }
 
-.scroll div span:hover {
+.scrollskills div span:hover {
 	background: #798bbb;
 	cursor: pointer;
 }
 
-@keyframes animate2 {
+@keyframes animate {
 	0% {
 		transform: translateX(0%);
 	}
 	100% {
 		transform: translateX(-200%);
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.bento-grid {
+		grid-template-areas: "hero hero map" " hero hero social " " quote quote work" " skills skills work";
+		grid-template-columns: repeat(3, 200px);
+		grid-template-rows: repeat(4, 240px);
+	}
+	blockquote > div > div {
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 887px) {
+	.headermodifier {
+		margin-top: 100px;
+	}
+}
+
+@media screen and (max-width: 670px) {
+	.bento-grid {
+		display: flex !important;
+		flex-direction: column;
+		width: 100%;
+		padding-inline: 10px;
+	}
+	.work {
+		min-height: 800px;
 	}
 }
