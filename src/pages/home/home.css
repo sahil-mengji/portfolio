@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:700");
+
+.social-links {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 10px;
+}
+
+.social-links > a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	border-radius: 50%;
+}
+
+.social-links > a > svg {
+	height: 20px;
+	width: 20px;
+}
+
+.social-links > a:hover {
+	background-color: #21262d;
+}
+
+.bento-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 280px);
+	grid-template-rows: repeat(6, 280px);
+	gap: 15px;
+	max-width: 1165px;
+	width: 100%;
+
+	grid-template-areas:
+		"hero hero map social"
+		"hero hero . skills"
+		"spotify quote quote skills"
+		"warning warning work work";
+}
+
+.bento-grid > div {
+	border-radius: 40px;
+	border: 2px solid #30363d;
+	padding: 40px;
+	background-color: #0d1117;
+}
+
+.hero {
+	grid-area: hero;
+}
+.map {
+	grid-area: map;
+	padding: 0 !important;
+	overflow: hidden;
+}
+.quote {
+	grid-area: quote;
+	font-family: "Droid Serif", serif;
+}
+.skills {
+	grid-area: skills;
+}
+.warning {
+	grid-area: warning;
+}
+.spotify {
+	grid-area: spotify;
+}
+.work {
+	grid-area: work;
+}
+
+.social {
+	grid-area: social;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	justify-items: center;
+	align-items: center;
+	color: white;
+}
+
+.social > svg {
+	fill: rgb(158, 166, 185);
+	height: 40px;
+	width: 40px;
+	transition: 200ms;
+}
+
+.social > svg:hover {
+	transform: scale(1.4);
+	cursor: pointer;
+}
+
+.social > .div1:hover {
+	fill: rgb(114, 220, 255);
+}
+.social > .div2:hover {
+	fill: rgb(159, 87, 254);
+}
+.social > .div3:hover {
+	fill: rgb(87, 137, 254);
+}
+.social > .div4:hover {
+	fill: rgb(254, 87, 115);
+}
+.container > p {
+	text-shadow: 0 0 7px rgba(255, 255, 255, 0.3),
+		0 0 3px rgba(255, 255, 255, 0.3);
+}
+.container {
+	color: #e5e5e5;
+	font-family: "Roboto";
+	font-size: 2.26rem;
+	text-transform: uppercase;
+
+	display: flex;
+	align-items: center;
+	height: 55px;
+}
+
+.animation {
+	height: 55px;
+	overflow: hidden;
+}
+
+.animation > div > div {
+	padding: 0.25rem 0.75rem;
+	padding-inline: 0.5rem;
+	height: 55px;
+
+	margin-bottom: 20px;
+	display: inline-block;
+}
+
+.animation div:first-child {
+	animation: text-animation 8s infinite;
+}
+
+.first div {
+	background-color: #17799c;
+}
+.second div {
+	background-color: #9c7018;
+}
+.third div {
+	background-color: #8b061e;
+}
+
+@keyframes text-animation {
+	0% {
+		margin-top: 0;
+	}
+	10% {
+		margin-top: 0;
+	}
+	20% {
+		margin-top: -70px;
+	}
+	30% {
+		margin-top: -70px;
+	}
+	40% {
+		margin-top: -140px;
+	}
+	60% {
+		margin-top: -140px;
+	}
+	70% {
+		margin-top: -70px;
+	}
+	80% {
+		margin-top: -70px;
+	}
+	90% {
+		margin-top: 0;
+	}
+	100% {
+		margin-top: 0;
+	}
+}
+
+.iam {
+	font-family: "Roboto";
+	font-size: 2rem;
+}
+.iam > p {
+	font-family: "Droid Serif", serif;
+	font-weight: bold;
+}
+
+.pimage {
+	background: url("https://miro.medium.com/v2/resize:fit:785/0*Ggt-XwliwAO6QURi.jpg");
+	object-fit: cover;
+	background-size: cover;
+}
+
+.nlogo {
+	background: url("../../../public/logoa.png");
+	object-fit: contain;
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	background-position: center;
+}
+
+blockquote {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+blockquote > div > div {
+	font-size: 30px;
+	font-style: italic;
+}
+
+blockquote > div > p {
+	font-size: 20px;
+	color: #798bbb;
+}
+
+.div-heading {
+	font-family: "Droid Serif", serif;
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.scroll {
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	width: 100%;
+
+	-webkit-mask-image: linear-gradient(
+		90deg,
+		transparent,
+		#fff 20%,
+		#fff 80%,
+		transparent
+	);
+}
+
+.scroll div {
+	white-space: nowrap;
+	animation: animate var(--t) linear infinite;
+	animation-delay: calc(var(--t) * -1);
+}
+
+.something {
+	animation: animate2 var(--t) linear infinite;
+	animation-delay: calc(var(--t) / -2);
+	background-color: blue;
+}
+
+@keyframes animate {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+.scroll div span {
+	display: inline-flex;
+	margin: 10px;
+	background-color: #21262d;
+	color: #fff;
+	padding: 10px 14px;
+	border-radius: 10px;
+	transition: 500ms;
+}
+
+.scroll div span:hover {
+	background: #798bbb;
+	cursor: pointer;
+}
+
+@keyframes animate2 {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-200%);
+	}
+}
