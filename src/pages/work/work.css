@@ -24,6 +24,7 @@
 .work-grid > div > img {
 	border-radius: 20px;
 	width: 100%;
+
 	aspect-ratio: 9/5;
 }
 

@@ -1,9 +1,10 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 import "./home.css";
+
 import projects from "./projects.png";
 import pf from "./pf.png";
 export default function Home() {
@@ -77,13 +78,18 @@ export default function Home() {
 								<br /> and 🎨 Designer . I Design , 💻 Code and Create modern
 								user interfaces 📱
 							</p>
-							<Link to="/work">
-								<div className="text-slate-400 tracking-widest leading-loose text-[20px] mt-8">
-									<span className=" border border-slate-300 px-8 py-3 rounded-full bg-slate-50 font-semibold text-slate-900 hover:bg-slate-300 duration-200">
-										{" "}
-										About Me {">"}
-									</span>
-								</div>
+							<Link to="/about">
+								<button className="bn54 mt-6">
+									<span className="bn54span">About Me </span>
+									<svg
+										className="fill-slate-800 h-[20px] w-[20px]"
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="currentColor"
+									>
+										<path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
+									</svg>
+								</button>
 							</Link>
 						</div>
 
@@ -151,7 +157,7 @@ export default function Home() {
 							</Carousel>
 						</div>
 
-						<div className="work  relative overflow-hidden">
+						<div className="work  an54 relative overflow-hidden">
 							<h1 className="div-heading">Projects</h1>
 							<p className="text-slate-400 tracking-widest leading-loose text-[18spx]">
 								View my Previous Work and the Projects that i have made{" "}
@@ -162,8 +168,8 @@ export default function Home() {
 							/>
 						</div>
 
-						<div className="skills">
-							<h1 className="div-heading">Skills</h1>
+						<div className="skills an54">
+							<h1 className="div-heading mb-[20px]">Skills</h1>
 
 							<div className="scrollskills " style={{ "--t": "20s" }}>
 								<div>
