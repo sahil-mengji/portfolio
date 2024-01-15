@@ -9,9 +9,9 @@ function App() {
 		<div className="w-full h-[100vh] bg-[#090c10] text-white overflow-y-scroll perspective-[10px]">
 			<Navbar />
 			<Routes>
-				<Route path="/" element={<Home />} />
+				<Route index path="/" element={<Home />} />
 				<Route path="/work" element={<Work />} />
-				<Route path="/about" element={<About/>} />
+				<Route path="/about" element={<About />} />
 			</Routes>
 		</div>
 	);
