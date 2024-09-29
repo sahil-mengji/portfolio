@@ -6,6 +6,8 @@ function App() {
 	return (
 		<div className="w-full  bg-black  h-[100vh] flex justify-center items-center flex-col">
 			<Routes>
+				<Route index path="/portfolio" element={<Card />} />
+				<Route path="#" element={<Card />} />
 				<Route path="/" element={<Card />} />
 				<Route path="/detail/:id" element={<Detail />} />
 			</Routes>
